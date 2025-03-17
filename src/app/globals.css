@@ -10,15 +10,93 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.container {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bayroqni o‘rab turgan box (dropdown) stilini o‘zgartirish */
+.react-tel-input .flag-dropdown {
+  border-radius: 20px 0px 0px 20px !important; /* Yumalok qilish */
+  background-color: white; /* Oq fon */
+  border: none; /* Nozik border */
+  width: 45px !important; /* Boxning eni */
+  height: 100% !important; /* Boxning balandligi */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.react-tel-input .flag-dropdown:hover .selected-flag {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.react-tel-input .flag-dropdown.open {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.react-tel-input .flag-dropdown,
+.react-tel-input .selected-flag {
+  border-radius: 20px 0px 0px 20px !important;
+  /* overflow: hidden; */
+}
+
+.react-tel-input .country-list {
+  top: auto !important; /* Standart yuqoriga chiqishini o‘chiradi */
+  bottom: 100% !important; /* Modalni inputdan yuqoriga chiqaradi */
+  border-radius: 10px !important; /* Yumshoq chetlar */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Yorug‘lik effekt */
+}
+
+/* .sss{
+  background-color: #11003b;
+} */
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  gap: 40px;
+  min-width: 200%;
+  animation: marquee-scroll 15s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.marquee h1 {
+  font-size: 1.5rem;
+  margin: 0 20px;
+  white-space: nowrap;
+}
+
+.circle {
+  width: 10px; /* Kattaligi */
+  height: 10px; /* Kattaligi */
+  border-radius: 50%; /* Yumaloq qilish */
+  background-color: white; /* Boshlang‘ich rang */
+  animation: blink 1s infinite alternate; /* Animatsiya qo‘shish */
+}
+
+@keyframes blink {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: black;
+  }
 }
